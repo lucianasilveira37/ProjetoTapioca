@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido</title>
+  <link rel="stylesheet" href="pedido.css">
+</head>
+<body>
+
+  <header>
+    <div class="menu-container">
+      <div class="menu-icon" onclick="toggleMenu()">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+      </div>
+
+      <!-- Menu -->
+      <nav id="menu">
+          <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="pedido.html">Pedido</a></li>
+              <li><a href="contato.html">Contato</a></li>
+              <li><a href="imagens.html">Imagens</a></li>
+              <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          </ul>
+      </nav>
+  </div>
+</header>
+
+
+<section>
+  <div class="container">
+    <h1>Escolha sua comida</h1>
+    
+    <!-- Card de Seleção de CPF -->
+    <div class="card cpf-card">
+      <h3>Digite seu CPF</h3>
+      <div class="cpf-input">
+        <input type="text" id="cpf" placeholder="CPF (XXX.XXX.XXX-XX)" required>
+      </div>
+    </div>
+
+    <!-- Card de Seleção de Comida -->
+    <div class="card food-card">
+      <h3>Escolha a comida</h3>
+      <div class="food-selection">
+        <select id="food" onchange="loadRecheios()">
+          <option value="0">Selecione...</option>
+          <option value="1">Tapioca</option>
+          <option value="2">Cuscuz</option>
+          <option value="3">Sanduíche</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Card de Recheios -->
+    <div class="card recheios-card">
+      <h3>Escolha os recheios</h3>
+      <div id="recheiosList"></div>
+    </div>
+
+    <!-- Container para o Preço Total e Pagamento -->
+    <div class="cards-row">
+      <div class="card price-card">
+        <h3>Preço Total: R$ <span id="totalPrice">0.00</span></h3>
+        <button id="payButton" onclick="payOrder()">Pagar</button>
+      </div>
+    </div>
+
+    <!-- Card de Histórico de Compras -->
+    <div class="card history-card">
+      <h3>Digite seu CPF</h3>
+      <div class="cpf-input">
+        <input type="text" id="cpfHistory" placeholder="CPF (XXX.XXX.XXX-XX)" required>
+      </div>
+      <button id="historyButton" onclick="viewHistory()">Histórico de Compras</button>
+    </div>
+
+  </div>
+
+  <!-- Modal de Histórico de Compras -->
+  <div id="historyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeHistoryModal()">&times;</span>
+      <h2>Histórico de Compras</h2>
+      
+      <!-- Campo de Pesquisa por CPF -->
+      <div class="search-cpf">
+        <label for="searchCpf">Buscar Histórico por CPF:</label>
+        <input type="text" id="searchCpf" placeholder="Digite o CPF" oninput="searchByCpf()">
+      </div>
+      
+      <div id="historyList"></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Rodapé com links para redes sociais -->
+
+
+ <footer>
+
+  <div class="footer-content">
+      <p>&copy; 2024 - Todos os direitos reservados</p>
+      <div class="social-links">
+          <!-- Links para as redes sociais -->
+        
+          <a href="https://www.youtube.com/@rmaeventos874" target="_blank" class="social-icon">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+          </a>
+          <a href="https://www.instagram.com/rmaeventosoficial?utm_source=qr&igsh=MXEzcGdlem9nbmxreg==" target="_blank" class="social-icon">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+          </a>
+          <a href="https://www.facebook.com/francisca.silveira.315428?mibextid=ZbWKwL" target="_blank" class="social-icon">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+          </a>
+         
+      </div>
+  </div>
+</footer>
+
+
+
+
+  <script src="pedido.js"></script>
+</body>
+</html>
